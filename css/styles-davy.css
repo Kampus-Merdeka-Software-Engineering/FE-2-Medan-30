@@ -1,0 +1,139 @@
+body, html {
+  background-color: white;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Inter', sans-serif;
+}
+
+
+/* Navbar */
+.navbar {
+  background-color: #DEE3ED;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+}
+
+.navbar-container {
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 960px;
+  position: relative;
+}
+
+
+/* Logo */
+.logo {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: #25398D;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  height: auto;
+  top: 0;
+  left: 0;
+}
+
+.logo-text {
+  color: white;
+  font-size: 28px;
+  padding: 0px;
+  margin: 0px;
+  font-weight: 500;
+}
+
+.logo-text.highlight {
+  color: #2FF5DE;
+  font-weight: 700;
+}
+
+
+/* Navbar Action Item */
+.action-item-container {
+  display: flex;
+  column-gap: 16px;
+}
+
+.action-item {
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+  cursor: pointer
+}
+
+.action-item:hover {
+  opacity: 0.8;
+}
+
+
+.action-item p {
+  font-size: 14px;
+  color:#505FA3;
+  margin: 0px
+}
+
+
+/* Hero */
+.hero {
+  background-color: #EEF2F7;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 28px;
+}
+
+.hero-container {
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 960px;
+}
+
+.hero-text-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+/* Hero Text */
+.hero-text {
+  font-size: 46px;
+  font-weight: 700;
+  margin: 0px;
+  padding: 0px;
+  color: #676E7D;
+}
+
+.hero-text.highlight {
+  color: black;
+}
+
+/* Hero Category */
+.hero-category-container {
+  display: flex;
+  column-gap: 16px;
+}
+
+.hero-category {
+  color: #676E7D;
+  font-size: 14px;
+  padding: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hero-category.active {
+  color: black;
+  border-bottom: 3px solid #3F509B;
+}
+
+.hero-category:hover {
+  border-bottom: 3px solid #3F509B;
+}
