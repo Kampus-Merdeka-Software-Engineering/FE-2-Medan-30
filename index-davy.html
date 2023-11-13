@@ -24,7 +24,7 @@
         <div></div>
         <!-- Action Item -->
         <div class="action-item-container">
-          <div class="action-item">
+          <div id="search-button" class="action-item">
             <!-- Icon -->
             <i
               class="fa fa-search"
@@ -34,11 +34,21 @@
             <!-- Label -->
             <p>Search</p>
           </div>
-          <div class="action-item">
+          <div id="menu-button" class="action-item">
             <!-- Icon -->
             <i class="fa fa-bars" aria-hidden="true" style="color: #505fa3"></i>
             <!-- Label -->
             <p>Menu</p>
+          </div>
+          <div id="close-menu-button" class="action-item hide">
+            <!-- Icon -->
+            <i
+              class="fa fa-times"
+              aria-hidden="true"
+              style="color: #505fa3"
+            ></i>
+            <!-- Label -->
+            <p>Close</p>
           </div>
         </div>
       </div>
@@ -63,5 +73,48 @@
         </div>
       </div>
     </div>
+
+    <!-- Menu Modal -->
+    <div id="menu-modal" class="menu-modal hide">
+      <div class="menu-modal-container">
+        <!-- Category List Container -->
+        <div class="menu-modal-category-list">
+          <a class="menu-modal-category-list-item active">Piala Dunia</a>
+          <a class="menu-modal-category-list-item">G20 Indonesia</a>
+          <a class="menu-modal-category-list-item">Ekonomi</a>
+          <a class="menu-modal-category-list-item">Nusantara</a>
+          <a class="menu-modal-category-list-item">Internasional</a>
+          <a class="menu-modal-category-list-item">Olahraga</a>
+          <a class="menu-modal-category-list-item">Teknologi</a>
+        </div>
+        <!-- Result Container -->
+        <div class="menu-modal-result-container">
+          <h1 class="menu-modal-result-title">Piala Dunia</h1>
+          <div class="menu-modal-result-list-container">
+            <div class="menu-modal-result-list">
+              <h2 class="menu-modal-result-list-title">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </h2>
+              <time
+                class="menu-modal-result-list-time"
+                datetime="2023-11-15 07:30"
+                >15 November 2023 07:30</time
+              >
+            </div>
+            <div class="menu-modal-result-list">
+              <h2 class="menu-modal-result-list-title">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </h2>
+              <time
+                class="menu-modal-result-list-time"
+                datetime="2023-11-15 07:30"
+                >15 November 2023 07:30</time
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script/index.js"></script>
   </body>
 </html>
