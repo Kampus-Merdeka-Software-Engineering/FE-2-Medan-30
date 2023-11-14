@@ -2,152 +2,278 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="author" content="Group 30" />
-    <meta name="description" content="This is the news about anything what u need" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Medan30 News</title>
+    <title>Medan 30: News</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <nav>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <!-- Logo -->
         <div class="logo">
-          <h1 class="blog">
-            <a href="/balikketampilanawal">Medan<span>30</span> News</a>
-          </h1>
+          <h1 class="logo-text">Medan</h1>
+          <h1 class="logo-text highlight">30</h1>
         </div>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li class="dropdown">
-            <a href="" class="dropbtn">Category</a>
-            <div class="dropdown-content">
-              <a href="/category/tech">Technology</a>
-              <a href="/category/health">Health</a>
-              <a href="/category/sports">Sports</a>
-              <a href="/category/lifeStyle">Life Style</a>
-            </div>
-          </li>
-          <li><a href="/aboutus">About Us</a></li>
-          <li>
-            <a href="/regist"><img src="asset/profil.png" alt="" class="profil" /> Profile</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <div class="slideimage">
-        <div class="background">
-          <h1>Welcome Viewers !</h1>
-          <p>Portal Berita Terupdate dan Terpercaya</p>
-          <button><a href="#">Baca Sekarang</a></button>
+        <div></div>
+        <!-- Action Item -->
+        <div class="action-item-container">
+          <div id="search-button" class="action-item">
+            <!-- Icon -->
+            <i
+              class="fa fa-search"
+              aria-hidden="true"
+              style="color: #505fa3"
+            ></i>
+            <!-- Label -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+              <g clip-path="url(#clip0_16_52)">
+                <path d="M10.9476 9.33333H10.4209L10.2343 9.15333C10.8876 8.39333 11.2809 7.40667 11.2809 6.33333C11.2809 3.94 9.34092 2 6.94759 2C4.55426 2 2.61426 3.94 2.61426 6.33333C2.61426 8.72667 4.55426 10.6667 6.94759 10.6667C8.02092 10.6667 9.00759 10.2733 9.76759 9.62L9.94759 9.80667V10.3333L13.2809 13.66L14.2743 12.6667L10.9476 9.33333ZM6.94759 9.33333C5.28759 9.33333 3.94759 7.99333 3.94759 6.33333C3.94759 4.67333 5.28759 3.33333 6.94759 3.33333C8.60759 3.33333 9.94759 4.67333 9.94759 6.33333C9.94759 7.99333 8.60759 9.33333 6.94759 9.33333Z" fill="#505FA3"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_16_52">
+                  <rect width="16" height="16" fill="white" transform="translate(0.614258)"/>
+                </clipPath>
+              </defs>
+            </svg>
+            <p>Search</p>
+          </div>
+          <div id="menu-button" class="action-item">
+            <!-- Icon -->
+            <i class="fa fa-bars" aria-hidden="true" style="color: #505fa3"></i>
+            <!-- Label -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+              <g clip-path="url(#clip0_16_56)">
+                <path d="M2.61426 12H14.6143V10.6667H2.61426V12ZM2.61426 8.66667H14.6143V7.33333H2.61426V8.66667ZM2.61426 4V5.33333H14.6143V4H2.61426Z" fill="#505FA3"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_16_56">
+                  <rect width="16" height="16" fill="white" transform="translate(0.614258)"/>
+                </clipPath>
+              </defs>
+            </svg>
+            <p>Menu</p>
+          </div>
+          <div id="close-menu-button" class="action-item hide">
+            <!-- Icon -->
+            <i
+              class="fa fa-times"
+              aria-hidden="true"
+              style="color: #505fa3"
+            ></i>
+            <!-- Label -->
+            <p>Close</p>
+          </div>
         </div>
       </div>
-      <section class="artikel">
-        <div class="Judul">
-          <h3>| Recomendation |</h3>
-          <span></span>
+    </nav>
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-container">
+        <div class="hero-text-container">
+          <h1 class="hero-text highlight">Portal Berita terupdate</h1>
+          <h1 class="hero-text">dan terpercaya</h1>
         </div>
-        <div class="konten_utama">
-          <div class="konten_besar">
-            <div class="text1">
-              <h2>Kepadatan Penduduk</h2>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis enim odio voluptate</p>
+        <div class="hero-category-container">
+          <a class="hero-category active">Semua Berita</a>
+          <a class="hero-category">Piala Dunia</a>
+          <a class="hero-category">G20 Indonesia</a>
+          <a class="hero-category">Ekonomi</a>
+          <a class="hero-category">Nusantara</a>
+          <a class="hero-category">Internasional</a>
+          <a class="hero-category">Olahraga</a>
+          <a class="hero-category">Teknologi</a>
+          <a class="hero-category">Otomotif</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu Modal -->
+    <div id="menu-modal" class="menu-modal hide">
+      <div class="menu-modal-container">
+        <!-- Category List Container -->
+        <div class="menu-modal-category-list">
+          <a class="menu-modal-category-list-item active">Piala Dunia</a>
+          <a class="menu-modal-category-list-item">G20 Indonesia</a>
+          <a class="menu-modal-category-list-item">Ekonomi</a>
+          <a class="menu-modal-category-list-item">Nusantara</a>
+          <a class="menu-modal-category-list-item">Internasional</a>
+          <a class="menu-modal-category-list-item">Olahraga</a>
+          <a class="menu-modal-category-list-item">Teknologi</a>
+        </div>
+        <!-- Result Container -->
+        <div class="menu-modal-result-container">
+          <h1 class="menu-modal-result-title">Piala Dunia</h1>
+          <div class="menu-modal-result-list-container">
+            <div class="menu-modal-result-list">
+              <h2 class="menu-modal-result-list-title">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </h2>
+              <time
+                class="menu-modal-result-list-time"
+                datetime="2023-11-15 07:30"
+                >15 November 2023 07:30</time
+              >
+            </div>
+            <div class="menu-modal-result-list">
+              <h2 class="menu-modal-result-list-title">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </h2>
+              <time
+                class="menu-modal-result-list-time"
+                datetime="2023-11-15 07:30"
+                >15 November 2023 07:30</time
+              >
             </div>
           </div>
-          <div class="konten_kecil1">
-            <div class="konten konten1">
-              <div class="text">
-                <h3>Kepadatan Penduduk</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet reiciendis nam</p>
-              </div>
-            </div>
-            <div class="konten konten2">
-              <div class="text">
-                <h3>Bola Bulat</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet reiciendis nam</p>
-              </div>
-            </div>
-            <div class="konten konten3">
-              <div class="text">
-                <h3>Tempat Traveling Viral</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet reiciendis nam</p>
-              </div>
-            </div>
-            <div class="konten konten4">
-              <div class="text">
-                <h3>Kehebatan Teknologi Ai</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet reiciendis nam</p>
-              </div>
-            </div>
-          </div>
         </div>
-        <div class="kategori">
-          <h3>| Sport |</h3>
-          <span></span>
-        </div>
-        <div class="kartu">
-          <div class="kartu1">
-            <img src="asset/bola.png" alt="" />
-            <h3>Ngikutt</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aspernatur non eveniet dolore illum consequatur nobis. Natus corrupti illum quod?</p>
-          </div>
-          <div class="kartu1">
-            <img src="asset/bola.png" alt="" />
-            <h3>Terserah aja</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt at, nemo deleniti vitae maxime quam eius dicta ipsam eaque unde?</p>
-          </div>
-          <div class="kartu1">
-            <img src="asset/bola.png" alt="" />
-            <h3>Bebas deh</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam sapiente eos quas asperiores! Voluptatibus quidem cumque hic eligendi aliquam recusandae.</p>
-          </div>
-        </div>
-        <div class="kategori">
-          <h3>|Technology|</h3>
-          <span></span>
-        </div>
-        <div class="kartu">
-          <div class="kartu1">
-            <img src="asset/ai.jpg" alt="" />
-            <h3>Gatau</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores aspernatur non eveniet dolore illum consequatur nobis. Natus corrupti illum quod?</p>
-          </div>
-          <div class="kartu1">
-            <img src="asset/ai.jpg" alt="" />
-            <h3>Bingung</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt at, nemo deleniti vitae maxime quam eius dicta ipsam eaque unde?</p>
-          </div>
-          <div class="kartu1">
-            <img src="asset/ai.jpg" alt="" />
-            <h3>Santai dulu</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam sapiente eos quas asperiores! Voluptatibus quidem cumque hic eligendi aliquam recusandae.</p>
-          </div>
-        </div>
-      </section>
-      <footer>
-        <div class="isi_footer">
-          <div class="isi">
-            <a href="#">Home</a>
-            <a href="#">Article</a>
-            <a href="#">About Us</a>
-          </div>
-          <div class="isi">
-            <a href="#">Recomendation</a>
-            <a href="#">News</a>
-            <a href="#">Technology</a>
-            <a href="#">LifeStyle</a>
-          </div>
-          <div class="isi">
-            <a href="#">Trend</a>
-            <a href="#">Healthy</a>
-            <a href="#">Sport</a>
-          </div>
-        </div>
-        <div class="copy">
-          <p>&copy; 2023 RevoU - Capstone Project Group 30 - Medan</p>
-        </div>
-      </footer>
-    </main>
+      </div>
+    </div>
+    <script src="script/index.js"></script>
   </body>
 </html>
+<!--Artikel-->
+<section class="artikel">
+  <div class="konten_utama">
+    <div class="text1">
+      <h2 class="Judul-text">Rekomendasi</h2>
+      <h1 class="text1">Lorem ipsum dolor sit amet,consectetur adipiscing elit</h1>
+      <p class="tanggal">Tanggal: 11 November 2023</p>
+    </div>
+    <div class="konten_besar">
+      <!-- ini hanya untuk gambar -->
+    </div>
+  </div>
+  <h5>Terbaru</h5>
+<div class="kartu">
+<div class="kartu3biji"> 
+  <div class="kartu1">
+    <h3>Ekonomi</h3>
+    <img src="asset/Foto 2.png" alt="">
+    <p class="text_deskripsi">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor </p>
+    <p class="tanggal">Tanggal: 11 November 2023</p>
+  </div>
+  <div class="kartu1">
+    <h3>Ekonomi</h3>
+    <img src="asset/Foto 2.png" alt=""/>
+    <p class="text_deskripsi">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor </p>
+    <p class="tanggal">Tanggal: 11 November 2023</p>
+  </div>
+  <div class="kartu1">
+    <h3>Ekonomi</h3>
+    <img src="asset/Foto 2.png" alt=""/>
+    <p class="text_deskripsi">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor </p>
+    <p class="tanggal">Tanggal: 11 November 2023</p>
+  </div>
+</div>
+</div>
+<h5>Trending</h5>
+<div class="kartuu">
+  <div class="kartu11">
+    <h4>Trending#1</h4>
+    <img src="asset/Foto 2.png" alt="" />
+    <h3>Ekonomi</h3>
+    <p class="text_desk2">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor </p>
+    <p class="tanggal2">Tanggal: 11 November 2023</p>
+  </div>
+  <div class="kartu11">
+    <h4>Trending#2</h4>
+    <img src="asset/Foto 2.png" alt="" />
+    <h3>Ekonomi</h3>
+    <p class="text_desk2">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor </p>
+    <p class="tanggal2">Tanggal: 11 November 2023</p>
+  </div>
+  <div class="kartu11">
+    <h4>Trending#3</h4>
+    <img src="asset/Foto 2.png" alt="" />
+    <h3>Ekonomi</h3>
+    <p class="text_desk2">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor </p>
+    <p class="tanggal2">Tanggal: 11 November 2023</p>
+  </div>
+   <div class="kartu11">
+    <h4>Trending#1</h4>
+    <img src="asset/Foto 2.png" alt="" />
+    <h3>Ekonomi</h3>
+    <p class="text_desk2">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor </p>
+    <p class="tanggal2">Tanggal: 11 November 2023</p>
+  </div>
+   <div class="kartu11">
+    <h4>Trending#2</h4>
+    <img src="asset/Foto 2.png" alt="" />
+    <h3>Ekonomi</h3>
+    <p class="text_desk2">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor </p>
+    <p class="tanggal2">Tanggal: 11 November 2023</p>
+  </div>
+  <div class="kartu11">
+    <h4>Trending#3</h4>
+    <img src="asset/Foto 2.png" alt="" />
+    <h3>Ekonomi</h3>
+    <p class="text_desk2">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor </p>
+    <p class="tanggal2">Tanggal: 11 November 2023</p>
+  </div>
+   <div class="kartu11">
+    <h4>Trending#1</h4>
+    <img src="asset/Foto 2.png" alt="" />
+    <h3>Ekonomi</h3>
+    <p class="text_desk2">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor </p>
+    <p class="tanggal2">Tanggal: 11 November 2023</p>
+  </div>
+   <div class="kartu11">
+    <h4>Trending#2</h4>
+    <img src="asset/Foto 2.png" alt="" />
+    <h3>Ekonomi</h3>
+    <p class="text_desk2">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor </p>
+    <p class="tanggal2">Tanggal: 11 November 2023</p>
+  </div>
+   <div class="kartu11">
+    <h4>Trending#3</h4>
+    <img src="asset/Foto 2.png" alt="" />
+    <h3>Ekonomi</h3>
+    <p class="text_desk2">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor </p>
+    <p class="tanggal2">Tanggal: 11 November 2023</p>
+  </div>
+</div>
+</section>
+<section class="konten_bawah">
+<div class="kartuu1">
+  <div class="kartu3b">
+    <img src="asset/Foto 2.png" alt="" />
+    <div class="textt">
+    <h3>Ekonomi</h3>
+    <p class="text_desk3">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor </p>
+    <p class="tanggal3">Tanggal: 11 November 2023</p>
+  </div>
+  </div>
+  <div class="kartu3b">
+    <img src="asset/Foto 2.png" alt="" />
+    <div class="textt">
+    <h3>Ekonomi</h3>
+    <p class="text_desk3">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor </p>
+    <p class="tanggal3">Tanggal: 11 November 2023</p>
+  </div>
+  </div>
+  <div class="kartu3b">
+      <img src="asset/Foto 2.png" alt="" />
+      <div class="textt">
+      <h3>Ekonomi</h3>
+      <p class="text_desk3">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor </p>
+      <p class="tanggal3">Tanggal: 11 November 2023</p>
+  </div>
+  </div>
+  </div>
+  </div>
+<div class="konten_bawah2">
+  <div class="konten_besar2">
+    <div class="text6">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor </p>
+      <p class="tanggal4">Tanggal: 11 November 2023</p>
+    </div>
+  </div>
+</div>
+</section>
