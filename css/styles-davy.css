@@ -398,6 +398,7 @@ body {
   justify-content: space-between;
   padding-top: 16px;
   padding-bottom: 16px;
+  cursor: pointer;
 }
 
 .highlight-content-info p {
@@ -456,7 +457,15 @@ body {
 .latest-content-card {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  transition: 200ms;
 }
+
+.latest-content-card:hover {
+  transform: scale(1.02);
+}
+
+
 
 .latest-content-card p {
   font-size: 14px;
@@ -497,6 +506,13 @@ body {
   display: flex;
   flex-direction:column;
   row-gap: 12px;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+
+.content-card:hover {
+  transform: scale(1.02);
 }
 
 
