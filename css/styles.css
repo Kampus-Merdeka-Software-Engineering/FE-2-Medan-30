@@ -4,6 +4,10 @@
   --secondary-text: #676E7D;
 }
 
+a {
+  text-decoration: none;
+}
+
 body, html {
   background-color: white;
   width: 100%;
@@ -165,6 +169,7 @@ body {
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
+  text-decoration: none;
   
 }
 
@@ -264,6 +269,7 @@ body {
 .menu-modal-result-list-title {
   font-size: 24px;
   margin: 0px;
+  color: black;
   font-weight: 600;
 }
 
@@ -316,7 +322,6 @@ body {
   flex-direction: column;
   padding-right: 24px;
   padding-left: 24px;
-  padding-bottom: 16px
 }
 
 .search-modal-content-result {
@@ -349,6 +354,7 @@ body {
   font-weight: 600;
   margin: 0px;
   margin-top: 2px;
+  color: black;
 }
 .search-modal-content-result time {
   font-size: 12px;
@@ -435,6 +441,7 @@ body {
   font-size: 38px;
   font-weight: 600px;
   margin: 0px;
+  color: black;
 }
 
 .highlight-content-info time {
@@ -515,6 +522,7 @@ grid-template-columns: repeat(3, 1fr);
   font-weight: 600;
   margin: 0px;
   margin-top: 8px;
+  color: black;
 }
 
 .latest-content-card time {
@@ -620,6 +628,7 @@ grid-template-columns: repeat(3, 1fr);
   margin: 0px;
   text-overflow: ellipsis;
   overflow: hidden;
+  color: black;
   display: -webkit-box; 
   -webkit-box-orient: vertical; 
   -webkit-line-clamp: 4; 
@@ -761,6 +770,7 @@ flex: 1;
   max-width: 840px;
   margin-top: 42px;
   margin-bottom: 42px;  
+  white-space: pre-wrap;
 }
 
 .comment-section-outside-container {
@@ -773,8 +783,7 @@ flex: 1;
 .comment-section-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 780px;
+  width: 700px;
   border-right: 1px #A1A1A1 solid;
   border-left: 1px #A1A1A1 solid;
   padding-right: 32px;
@@ -783,6 +792,7 @@ flex: 1;
   padding-bottom: 32px;
   row-gap: 32px;
 }
+
 
 .comment-section-input-container {
   width: 100%;
@@ -811,6 +821,13 @@ flex: 1;
   font-size: 16px;
   cursor: pointer;
   align-self: flex-end;
+}
+
+.comment-section-result-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
 }
 
 .comment-card {

@@ -53,43 +53,67 @@
         </div>
       </div>
     </nav>
-    <!-- Hero -->
-    <div class="hero">
-      <div class="hero-container">
-        <div class="hero-text-container">
-          <h1 class="hero-text highlight">Portal Berita terupdate</h1>
-          <h1 class="hero-text">dan terpercaya</h1>
+    <div class="content-container-half-background" />
+    <!-- Content -->
+    <section class="content-container">
+      <div class="detail-content-container">
+        <div class="detail-content-header-container">
+          <h2
+            class="detail-content-header-category"
+            id="detail-content-header-category"
+          ></h2>
+          <h1
+            class="detail-content-header-title"
+            id="detail-content-header-title"
+          ></h1>
+          <time
+            class="detail-content-header-time"
+            id="detail-content-header-time"
+            datetime="2023-11-15 07:30"
+          ></time>
         </div>
-        <div class="horizontal-scroll">
-          <div class="hero-category-container" id="hero-category-container">
-            <a class="hero-category active" id="all-categories">Semua Berita</a>
-          </div>
-        </div>
+
+        <img
+          src="asset/Foto 2.png"
+          class="detail-content-thumbnail"
+          id="detail-content-thumbnail"
+        />
+        <span
+          class="detail-content-thumbnail-description"
+          id="detail-content-thumbnail-description"
+        >
+        </span>
+
+        <div class="detail-content-news" id="detail-content-news"></div>
       </div>
-    </div>
+    </section>
 
-    <section class="highlight-container" id="highlight-container"></section>
+    <section class="comment-section-outside-container">
+      <div class="comment-section-container">
+        <form class="comment-section-input-container">
+          <input
+            type="text"
+            placeholder="Nama"
+            class="default-input"
+            id="comment-name-input"
+          />
+          <textarea
+            placeholder="Komentar"
+            class="default-input"
+            id="comment-input"
+            rows="5"
+          ></textarea>
+          <button class="default-button" id="submit-comment-button">
+            Beri Komentar
+          </button>
+        </form>
 
-    <div class="content-container">
-      <section class="content-container-section">
-        <h3 class="content-container-section-title">Latest</h3>
         <div
-          class="latest-content-container"
-          id="latest-content-container"
+          class="comment-section-result-container"
+          id="comment-section-result-container"
         ></div>
-      </section>
-      <section class="content-container-section">
-        <h3 class="content-container-section-title">Trending</h3>
-        <div
-          class="trending-content-container"
-          id="trending-content-container"
-        ></div>
-      </section>
-      <section class="content-container-section">
-        <h3 class="content-container-section-title">More</h3>
-        <div class="more-content-container" id="more-content-container"></div>
-      </section>
-    </div>
+      </div>
+    </section>
 
     <!-- Menu Modal -->
     <div id="menu-modal" class="menu-modal modal-hide">
@@ -127,7 +151,8 @@
         ></div>
       </div>
     </div>
-    <script src="js/script.js"></script>
+
+    <script src="js/detail.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/services.js"></script>
     <script src="js/utils.js"></script>
