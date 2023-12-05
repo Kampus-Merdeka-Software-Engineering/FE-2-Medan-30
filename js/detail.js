@@ -75,4 +75,6 @@ submitCommentButton.addEventListener("click", async (e) => {
     comment: createdComment.comment,
     createdAt: createdComment.createdAt,
   });
+  commentNameInput.value = "";
+  commentInput.value = "";
 });
