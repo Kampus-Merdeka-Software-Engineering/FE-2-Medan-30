@@ -38,7 +38,6 @@ const chooseMenuCategories = async (category_id, category_name) => {
   });
 
   menuModalResultTitle.innerHTML = category_name;
-  console.log(news);
   menuModalResultContainer.innerHTML = null;
   news.forEach((news) => {
     const menuModalResult = document.createElement("a");
