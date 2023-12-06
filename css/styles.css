@@ -410,6 +410,12 @@ body {
   border-bottom: 1px solid #E3E3E3;
 }
 
+.highlight-content-thumbnail {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .highlight-content {
   display: flex;
   width: 100%;
