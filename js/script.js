@@ -27,7 +27,7 @@ const setRecommendationNews = ({
   highlightContainer.innerHTML = `
   <a class="highlight-content" href="news?slug=${slug}">
     <div class="highlight-content-info">
-      <p>Recommendation</p>
+      <p>Rekomendasi</p>
       <h1>${title}</h1>
       <time datetime="${createdAt}">${getFormatDate(createdAt)}</time>
     </div>
