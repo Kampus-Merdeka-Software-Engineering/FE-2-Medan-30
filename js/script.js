@@ -3,6 +3,9 @@ const heroCategoryContainer = document.getElementById(
   "hero-category-container"
 );
 const highlightContainer = document.getElementById("highlight-container");
+const highlightContainerLoading = document.getElementById(
+  "highlight-container-loading"
+);
 const latestContentContainer = document.getElementById(
   "latest-content-container"
 );
@@ -53,6 +56,8 @@ const setLatestNews = (latest) => {
 };
 
 const changeCategories = async (id, name) => {
+  showLoadingState();
+
   const heroCategories = document.querySelectorAll(".hero-category");
   heroCategories.forEach(async (heroCategory) => {
     if (heroCategory.classList.contains("active")) {
@@ -76,11 +81,28 @@ const changeCategories = async (id, name) => {
 
   // Set Latest news
   setLatestNews(latest);
+  stopLoadingState();
 };
 
 allCategories.addEventListener("click", () =>
   changeCategories(0, "Semua Berita")
 );
+
+const showLoadingState = () => {
+  highlightContainer.innerHTML =
+    '<div class="loading show" id="highlight-container-loading" />';
+  latestContentContainer.innerHTML = null;
+  latestContentContainer.classList.add("loading");
+  trendingContentContainer.classList.add("loading");
+  moreContentContainer.classList.add("loading");
+};
+
+const stopLoadingState = () => {
+  highlightContainerLoading.classList.remove("show");
+  latestContentContainer.classList.remove("loading");
+  trendingContentContainer.classList.remove("loading");
+  moreContentContainer.classList.remove("loading");
+};
 
 // On Load
 window.addEventListener("load", async () => {
@@ -179,4 +201,6 @@ window.addEventListener("load", async () => {
     </div>`;
     moreContentContainer.appendChild(moreContentHighlight);
   }
+
+  stopLoadingState();
 });

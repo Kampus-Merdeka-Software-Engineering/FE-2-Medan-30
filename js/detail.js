@@ -60,6 +60,12 @@ window.addEventListener("load", async () => {
 
   // Set Comment
   news.comments.forEach((comment) => addComment(comment));
+
+  // Stop Loading
+  detailContentHeaderCategory.classList.remove("loading");
+  detailContentHeaderTitle.classList.remove("loading");
+  detailContentHeaderTime.classList.remove("loading");
+  detailContentThumbnail.classList.remove("loading");
 });
 
 submitCommentButton.addEventListener("click", async (e) => {

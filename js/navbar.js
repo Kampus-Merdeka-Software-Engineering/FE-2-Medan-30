@@ -75,23 +75,34 @@ window.addEventListener("load", async () => {
 });
 
 // On Search
+let timeout = null;
 searchModalInput.addEventListener("keyup", async (event) => {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    const search = await getSearch(searchModalInput.value);
+  event.preventDefault();
+  searchModalContentResultContainer.innerHTML = null;
+  searchModalContentResultContainer.classList.add("loading-spinner");
 
-    search.forEach((news) => {
-      const searchModalContentResult = document.createElement("a");
-      searchModalContentResult.classList.add("search-modal-content-result");
-      searchModalContentResult.setAttribute("href", `news?slug=${news.slug}`);
-      searchModalContentResult.innerHTML = `
-      <p>${news.category.name}</p>
-      <h3>${news.title}</h3>
-      <time datetime="${news.createdAt}">${getFormatDate(news.createdAt)}</time>
-      `;
-      searchModalContentResultContainer.appendChild(searchModalContentResult);
-    });
-  }
+  clearTimeout(timeout);
+
+  timeout = setTimeout(async () => {
+    if (searchModalInput.value) {
+      const search = await getSearch(searchModalInput.value);
+
+      search.forEach((news) => {
+        const searchModalContentResult = document.createElement("a");
+        searchModalContentResult.classList.add("search-modal-content-result");
+        searchModalContentResult.setAttribute("href", `news?slug=${news.slug}`);
+        searchModalContentResult.innerHTML = `
+          <p>${news.category.name}</p>
+          <h3>${news.title}</h3>
+          <time datetime="${news.createdAt}">${getFormatDate(
+          news.createdAt
+        )}</time>
+        `;
+        searchModalContentResultContainer.appendChild(searchModalContentResult);
+      });
+    }
+    searchModalContentResultContainer.classList.remove("loading-spinner");
+  }, 500);
 });
 
 // On Menu Button Click

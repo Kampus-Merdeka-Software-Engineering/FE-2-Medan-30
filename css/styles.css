@@ -289,8 +289,9 @@ body {
   background-color: rgba(0,0,0,0.4);
   z-index: 100000;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .search-modal-content {
@@ -303,6 +304,7 @@ body {
   flex-direction: column;
   margin-right: 16px;
   margin-left: 16px;
+  margin-top: 10%;
 }
 
 .search-modal-input {
@@ -322,6 +324,27 @@ body {
   flex-direction: column;
   padding-right: 24px;
   padding-left: 24px;
+}
+
+.search-modal-content-result-container.loading-spinner {
+ padding-top: 12px;
+ padding-bottom: 12px;
+ justify-content: center;
+ width: 100%;
+ max-width: 550px;
+ padding-right: 0px;
+ padding-left: 0px;
+}
+
+
+
+.loading-spinner {
+  background-image: url("https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca.gif");
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  background-position: center;
 }
 
 .search-modal-content-result {
@@ -732,6 +755,7 @@ flex: 1;
   flex-direction: column;
   align-items: flex-start;
   max-width: 840px;
+  width: 100%;
 }
 
 .detail-content-header-category {
@@ -743,12 +767,23 @@ flex: 1;
   border-bottom: 2px var(--primary-text) solid;
 }
 
+.detail-content-header-category.loading {
+  height: 32px;
+  width: 67px
+}
+
 .detail-content-header-title {
   margin: 0px;
   font-size: 42px;
   font-weight: 600;
   margin-top: 16px;
 }
+
+.detail-content-header-title.loading {
+  width: 100%;
+  height: 101px;
+}
+
 
 .detail-content-header-time {
   margin: 0px;
@@ -762,6 +797,12 @@ flex: 1;
   width: 100%;
   margin-top: 24px;
 }
+
+.detail-content-thumbnail.loading {
+  height: 700px;
+}
+
+
 
 .detail-content-thumbnail-description {
   font-size: 14px;
@@ -881,6 +922,31 @@ flex: 1;
   font-size: 14px;
   margin: 0px;
 }
+
+/* Loading State */
+
+.highlight-container .loading.show {
+  width: 100%;
+  max-width: 960px;
+}
+
+.loading {
+  height: 250px;
+  position: relative;
+  background-color: #E2E2E2;
+}
+
+.loading::after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .2), transparent);
+  animation: loading 1.5s infinite;
+}
+
 
 /* Tablet View */
 @media only screen and (max-width: 840px) {
