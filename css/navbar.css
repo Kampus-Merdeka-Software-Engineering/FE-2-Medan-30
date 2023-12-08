@@ -1,0 +1,375 @@
+/* Navbar */
+.navbar {
+  background-color: #DEE3ED;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  position: fixed;
+  top: 0;
+  right:0;
+  left:0;
+  z-index: 1000;
+  
+}
+
+.navbar-container {
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 960px;
+  position: relative;
+  margin-right: 16px;
+  margin-left: 16px;
+}
+
+
+/* Logo */
+.logo {
+  display: flex;
+  flex-direction: column;
+  background-color: #25398D;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  height: auto;
+}
+
+.navbar .logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.logo-text {
+  color: white;
+  font-size: 28px;
+  padding: 0px;
+  margin: 0px;
+  font-weight: 500;
+}
+
+.logo-text.highlight {
+  color: #2FF5DE;
+  font-weight: 700;
+}
+
+
+/* Navbar Action Item */
+.action-item-container {
+  display: flex;
+  column-gap: 16px;
+}
+
+.action-item {
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+  cursor: pointer
+}
+
+.action-item.hide {
+  display: none;
+}
+
+.action-item:hover {
+  opacity: 0.8;
+}
+
+
+.action-item p {
+  font-size: 14px;
+  color:#505FA3;
+  margin: 0px
+}
+
+/* Menu Modal */
+.menu-modal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  padding-top: 40px;
+  background-color: white;
+  top:0;
+  bottom:0;
+  right:0;
+  left: 0;
+  display:flex;
+  justify-content: center;
+  transition: 700ms;
+}
+
+
+.menu-modal-container {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  margin-left: 16px;
+}
+
+.menu-modal-category-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding-top: 56px;
+  padding-right: 56px;
+  border-right: 1px solid #CFCFCF;
+}
+
+.menu-modal-category-list-item {
+  font-size: 16px;
+  color: #676E7D;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.menu-modal-category-list-item.active, .menu-modal-category-list-item:hover {
+  color: #2F4192;
+}
+
+
+.menu-modal-result-container {
+  display:flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.menu-modal-result-title {
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  font-size: 32px
+}
+
+.menu-modal-result-list-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border-top: 1px solid #CFCFCF;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.menu-modal-result-list {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #CFCFCF;
+  row-gap: 12px;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.menu-modal-result-list:hover {
+ transform: scale(1.03);
+}
+
+.menu-modal-result-list-title {
+  font-size: 24px;
+  margin: 0px;
+  color: black;
+  font-weight: 600;
+}
+
+.menu-modal-result-list-time {
+  font-size: 12px;
+  font-weight: 600;
+  color: #676E7D;
+}
+
+/* Search Modal */
+.search-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 100000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.search-modal-content {
+  background-color: white;
+  border-radius: 16px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20vh;
+}
+
+.search-modal-input {
+  font-size: 24px;
+  font-family: 'Inter', sans-serif;
+  padding: 16px;
+  flex: 1;
+  border: 0px;
+  border-bottom: 1px solid #DEDEDE;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  outline: none;
+}
+
+.search-modal-content-result-container {
+  display: flex;
+  flex-direction: column;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+.search-modal-content-result-container.loading-spinner {
+ padding-top: 12px;
+ padding-bottom: 12px;
+ justify-content: center;
+ width: 100%;
+ max-width: 550px;
+ padding-right: 0px;
+ padding-left: 0px;
+}
+
+.loading-spinner {
+  background-image: url("https://i.gifer.com/origin/34/34338d26023e5515f6cc8969aa027bca.gif");
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  background-position: center;
+}
+
+.search-modal-content-result {
+  display: flex; 
+  flex-direction:column;
+  padding-top:16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #CFCFCF;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.search-modal-content-result:last-child {
+  border: 0px;
+}
+
+.search-modal-content-result:hover {
+  transform: scale(1.02);
+ }
+
+.search-modal-content-result p {
+  font-size: 12px;
+  font-weight: 600;
+  color: #2F4192;
+  margin: 0px;
+}
+
+.search-modal-content-result h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0px;
+  margin-top: 2px;
+  color: black;
+}
+.search-modal-content-result time {
+  font-size: 12px;
+  font-weight: 600;
+  color: #676E7D;
+  margin-top: 8px;
+}
+
+.modal-show {
+  animation-duration: 0.5s;
+  animation-name: opacity-entry-animation;
+}
+
+.modal-close-animation {
+  animation-duration: 0.5s;
+  animation-name: opacity-exit-animation;
+}
+
+.modal-hide {
+  display: none;
+}
+
+@keyframes opacity-entry-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px)
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes opacity-exit-animation {
+  0% {
+    opacity: 1;
+    transform: translateY(0px)
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  .logo-text {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .menu-modal-category-list {
+    padding-right: 16px;  
+    row-gap: 14px;
+  }
+  .menu-modal-category-list-item {
+    font-size: 14px;
+  }
+  
+  .menu-modal-result-title {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 16px;
+    padding-left: 16px;
+    font-size: 24px;
+  }
+
+  .menu-modal-result-list-container {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .menu-modal-result-list-title {
+    font-size: 16px;
+  }
+
+  .menu-modal-result-list-time {
+    font-size: 8px;
+  }
+
+  .search-modal-input {
+    font-size: 18px;
+  }
+
+  .search-modal-content-result h3 {
+    font-size: 16px;
+  }
+
+  .search-modal-content-result-container {
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 0px;
+  }
+}

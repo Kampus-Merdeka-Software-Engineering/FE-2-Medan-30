@@ -25,8 +25,10 @@ const commentNameInput = document.getElementById("comment-name-input");
 const commentInput = document.getElementById("comment-input");
 const submitCommentButton = document.getElementById("submit-comment-button");
 
+// Saved News ID
 let newsID = null;
 
+// Add Comment to DOM
 const addComment = ({ name, comment, createdAt }) => {
   commentSectionResultContainer.innerHTML = `
   <div class="comment-card">
@@ -43,6 +45,7 @@ const addComment = ({ name, comment, createdAt }) => {
   `;
 };
 
+// On Load
 window.addEventListener("load", async () => {
   // Get Params
   const params = new URLSearchParams(window.location.search);
@@ -68,6 +71,7 @@ window.addEventListener("load", async () => {
   detailContentThumbnail.classList.remove("loading");
 });
 
+// Submit Comment to Server
 submitCommentButton.addEventListener("click", async (e) => {
   e.preventDefault();
   const createdComment = await createComment({

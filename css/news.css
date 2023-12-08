@@ -1,0 +1,241 @@
+
+.detail-content-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 960px;
+  margin-top: 32px;
+  width: 100%;
+  align-items: center;
+}
+
+.detail-content-header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 840px;
+  width: 100%;
+}
+
+.detail-content-header-category {
+  margin: 0px; 
+  font-size: 20px;
+  color: var(--primary-text);
+  font-weight: 600;
+  padding-bottom: 16px;
+  border-bottom: 2px var(--primary-text) solid;
+}
+
+.detail-content-header-category.loading {
+  height: 32px;
+  width: 67px
+}
+
+.detail-content-header-title {
+  margin: 0px;
+  font-size: 42px;
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+.detail-content-header-title.loading {
+  width: 100%;
+  height: 101px;
+}
+
+
+.detail-content-header-time {
+  margin: 0px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--secondary-text);
+  margin-top: 24px;
+}
+
+.detail-content-thumbnail {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.detail-content-thumbnail.loading {
+  height: 700px;
+}
+
+
+
+.detail-content-thumbnail-description {
+  font-size: 14px;
+  color: var(--secondary-text);
+  margin-top: 8px;
+  text-align: center;
+}
+
+.detail-content-news {
+  font-size: 16px;
+  color: #525252;
+  max-width: 840px;
+  margin-top: 42px;
+  margin-bottom: 42px;  
+  white-space: pre-wrap;
+}
+
+.comment-section-outside-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-top: 1px #A1A1A1 solid;
+}
+
+.comment-section-container {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  border-right: 1px #A1A1A1 solid;
+  border-left: 1px #A1A1A1 solid;
+  padding-right: 32px;
+  padding-left: 32px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  row-gap: 32px;
+}
+
+
+.comment-section-input-container {
+  width: 100%;
+  display: flex; 
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.default-input {
+  font-size: 14px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px #8F8F8F solid;
+  font-family: 'Inter', sans-serif;
+}
+
+.default-button {
+  color: white;
+  background-color: #25398D;
+  border-radius: 4px;
+  padding-right: 12px;
+  padding-left: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border: 0px;
+  font-size: 16px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.comment-section-result-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.comment-card {
+  display: flex;
+  column-gap: 16px;
+  align-items: center;
+  width: 100%;
+}
+
+.comment-card-profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: gray;
+}
+
+.comment-card-info-container {
+  display: flex;
+  flex-direction: column;
+  row-gap:10px;
+  width: 100%;
+}
+
+.comment-card-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-card-info p {
+  color: var(--primary-text);
+  margin: 0px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.comment-card-info time {
+  color: var(--secondary-text);
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.comment-card-info-container p {
+  font-size: 14px;
+  margin: 0px;
+}
+
+@media only screen and (max-width: 840px) {
+  .detail-content-header-category {
+    font-size: 16px;
+    padding-bottom: 12px; 
+  }
+
+  .detail-content-header-title {
+    font-size: 36px;
+    margin-top: 12px;
+  }
+
+  .detail-content-header-time {
+    font-size: 12px;
+    margin-top: 16px;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .detail-content-header-title {
+    font-size: 28px;
+    margin-top: 12px;
+  }
+
+  .detail-content-header-time {
+    margin-top: 12px;
+  }
+
+  .detail-content-news {
+    margin-top: 28px;
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+
+  .detail-content-container {
+    margin-top: 24px;
+  }
+
+  .comment-section-container {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .comment-card {
+    column-gap: 12px;
+    align-items: flex-start;
+  }
+
+  .comment-card-info-container {
+    row-gap: 6px;
+  }
+
+  .comment-section-input-container {
+    row-gap: 12px;
+  }
+
+}
