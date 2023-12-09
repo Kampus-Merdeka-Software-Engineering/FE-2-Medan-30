@@ -35,7 +35,7 @@ const addComment = ({ name, comment, createdAt }) => {
     <img class="comment-card-profile-image" width="40" height="40" />
     <div class="comment-card-info-container">
       <div class="comment-card-info">
-      <p>${name}</p>
+      <p>${name || "Anonymous"}</p>
       <time datetime="${createdAt}">${getFormatDate(createdAt)}</time>
       </div>
       <p>${comment}</p>
@@ -52,39 +52,58 @@ window.addEventListener("load", async () => {
   const slug = params.get("slug");
   const news = await getNewsBySlug(slug);
 
-  newsID = news.id;
-  // Get News Detail
-  detailContentHeaderCategory.innerHTML = news.category.name;
-  detailContentHeaderTitle.innerHTML = news.title;
-  detailContentHeaderTime.innerHTML = getFormatDate(news.createdAt);
-  detailContentThumbnail.src = news.thumbnail;
-  detailContentThumbnailDescription.innerHTML = news.thumbnail_description;
-  detailContentNews.innerHTML = news.content;
+  console.log(news);
 
-  // Set Comment
-  news.comments.forEach((comment) => addComment(comment));
+  if (news) {
+    newsID = news.id;
+    // Get News Detail
+    detailContentHeaderCategory.innerHTML = news.category.name;
+    detailContentHeaderTitle.innerHTML = news.title;
+    detailContentHeaderTime.innerHTML = getFormatDate(news.createdAt);
+    detailContentThumbnail.src = news.thumbnail;
+    detailContentThumbnailDescription.innerHTML = news.thumbnail_description;
+    detailContentNews.innerHTML = news.content;
 
-  // Stop Loading
-  detailContentHeaderCategory.classList.remove("loading");
-  detailContentHeaderTitle.classList.remove("loading");
-  detailContentHeaderTime.classList.remove("loading");
-  detailContentThumbnail.classList.remove("loading");
+    // Set Comment
+    news.comments.forEach((comment) => addComment(comment));
+
+    // Stop Loading
+    detailContentHeaderCategory.classList.remove("loading");
+    detailContentHeaderTitle.classList.remove("loading");
+    detailContentHeaderTime.classList.remove("loading");
+    detailContentThumbnail.classList.remove("loading");
+  }
 });
 
 // Submit Comment to Server
 submitCommentButton.addEventListener("click", async (e) => {
   e.preventDefault();
-  const createdComment = await createComment({
-    news_id: newsID,
-    name: commentNameInput.value,
-    comment: commentInput.value,
-  });
 
-  addComment({
-    name: createdComment.name,
-    comment: createdComment.comment,
-    createdAt: createdComment.createdAt,
-  });
-  commentNameInput.value = "";
-  commentInput.value = "";
+  if (!commentNameInput.value) {
+    commentNameInput.classList.add("error");
+  } else {
+    commentNameInput.classList.remove("error");
+  }
+
+  if (!commentInput.value) {
+    commentInput.classList.add("error");
+  } else {
+    commentInput.classList.remove("error");
+  }
+
+  if (commentInput.value && commentNameInput.value) {
+    const createdComment = await createComment({
+      news_id: newsID,
+      name: commentNameInput.value,
+      comment: commentInput.value,
+    });
+
+    addComment({
+      name: createdComment.name,
+      comment: createdComment.comment,
+      createdAt: createdComment.createdAt,
+    });
+    commentNameInput.value = "";
+    commentInput.value = "";
+  }
 });

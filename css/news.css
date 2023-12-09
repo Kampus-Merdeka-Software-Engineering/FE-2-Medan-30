@@ -114,6 +114,10 @@
   font-family: 'Inter', sans-serif;
 }
 
+.default-input.error {
+  border-color: red;
+}
+
 .default-button {
   color: white;
   background-color: #25398D;

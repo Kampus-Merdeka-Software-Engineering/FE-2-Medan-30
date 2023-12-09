@@ -68,3 +68,37 @@ body {
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .2), transparent);
   animation: loading 1.5s infinite;
 }
+
+.toast {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background-color: #c62f30;
+  border-radius: 12px;
+  z-index: 1000;
+  padding: 12px;
+  padding-right: 20px;
+  padding-left: 20px;
+  display: flex;
+  column-gap: 16px;
+  align-items:center;
+}
+
+.toast-info-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+}
+
+.toast-title {
+  margin: 0px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+
+.toast-description {
+  margin: 0px;
+  font-size: 16px;
+  color: white;
+}
