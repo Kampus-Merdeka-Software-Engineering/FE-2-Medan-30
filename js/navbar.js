@@ -8,16 +8,19 @@ const menuModal = document.getElementById("menu-modal");
 const searchModal = document.getElementById("search-modal");
 const searchModalContent = document.getElementById("search-modal-content");
 
-const searchModalInput = document.getElementById("search-modal-input");
-const searchModalContentResultContainer = document.getElementById(
-  "search-modal-content-result-container"
-);
+// Menu Modal Content
 const menuModalCategoryList = document.getElementById(
   "menu-modal-category-list"
 );
 const menuModalResultTitle = document.getElementById("menu-modal-result-title");
 const menuModalResultContainer = document.getElementById(
   "menu-modal-result-list-container"
+);
+
+// Search Modal Content
+const searchModalInput = document.getElementById("search-modal-input");
+const searchModalContentResultContainer = document.getElementById(
+  "search-modal-content-result-container"
 );
 
 const chooseMenuCategories = async (category_id, category_name) => {
@@ -55,55 +58,6 @@ const chooseMenuCategories = async (category_id, category_name) => {
     menuModalResultContainer.appendChild(menuModalResult);
   });
 };
-
-window.addEventListener("load", async () => {
-  const categories = await getCategories();
-
-  categories.forEach((category, index) => {
-    const menuModalCategory = document.createElement("a");
-    menuModalCategory.classList.add("menu-modal-category-list-item");
-    menuModalCategory.addEventListener("click", () =>
-      chooseMenuCategories(category.id, category.name)
-    );
-    if (index === 0) {
-      menuModalCategory.classList.add("active");
-      chooseMenuCategories(category.id, category.name);
-    }
-    menuModalCategory.innerHTML = category.name;
-    menuModalCategoryList.appendChild(menuModalCategory);
-  });
-});
-
-// On Search
-let timeout = null;
-searchModalInput.addEventListener("keyup", async (event) => {
-  event.preventDefault();
-  searchModalContentResultContainer.innerHTML = null;
-  searchModalContentResultContainer.classList.add("loading-spinner");
-
-  clearTimeout(timeout);
-
-  timeout = setTimeout(async () => {
-    if (searchModalInput.value) {
-      const search = await getSearch(searchModalInput.value);
-
-      search.forEach((news) => {
-        const searchModalContentResult = document.createElement("a");
-        searchModalContentResult.classList.add("search-modal-content-result");
-        searchModalContentResult.setAttribute("href", `news?slug=${news.slug}`);
-        searchModalContentResult.innerHTML = `
-          <p>${news.category.name}</p>
-          <h3>${news.title}</h3>
-          <time datetime="${news.createdAt}">${getFormatDate(
-          news.createdAt
-        )}</time>
-        `;
-        searchModalContentResultContainer.appendChild(searchModalContentResult);
-      });
-    }
-    searchModalContentResultContainer.classList.remove("loading-spinner");
-  }, 500);
-});
 
 // On Menu Button Click
 menuButton.addEventListener("click", () => {
@@ -150,4 +104,54 @@ searchModal.addEventListener("click", () => {
 // Prevent Search Modal Content from Closing Modal
 searchModalContent.addEventListener("click", (e) => {
   e.stopPropagation();
+});
+
+// On Load: Fetch and Set Categories Data
+window.addEventListener("load", async () => {
+  const categories = await getCategories();
+
+  categories.forEach((category, index) => {
+    const menuModalCategory = document.createElement("a");
+    menuModalCategory.classList.add("menu-modal-category-list-item");
+    menuModalCategory.addEventListener("click", () =>
+      chooseMenuCategories(category.id, category.name)
+    );
+    if (index === 0) {
+      menuModalCategory.classList.add("active");
+      chooseMenuCategories(category.id, category.name);
+    }
+    menuModalCategory.innerHTML = category.name;
+    menuModalCategoryList.appendChild(menuModalCategory);
+  });
+});
+
+// On User Search
+let timeout = null;
+searchModalInput.addEventListener("keyup", async (event) => {
+  event.preventDefault();
+  searchModalContentResultContainer.innerHTML = null;
+  searchModalContentResultContainer.classList.add("loading-spinner");
+
+  clearTimeout(timeout);
+
+  timeout = setTimeout(async () => {
+    if (searchModalInput.value) {
+      const search = await getSearch(searchModalInput.value);
+
+      search.forEach((news) => {
+        const searchModalContentResult = document.createElement("a");
+        searchModalContentResult.classList.add("search-modal-content-result");
+        searchModalContentResult.setAttribute("href", `news?slug=${news.slug}`);
+        searchModalContentResult.innerHTML = `
+          <p>${news.category.name}</p>
+          <h3>${news.title}</h3>
+          <time datetime="${news.createdAt}">${getFormatDate(
+          news.createdAt
+        )}</time>
+        `;
+        searchModalContentResultContainer.appendChild(searchModalContentResult);
+      });
+    }
+    searchModalContentResultContainer.classList.remove("loading-spinner");
+  }, 500);
 });

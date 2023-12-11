@@ -56,6 +56,8 @@ window.addEventListener("load", async () => {
 
   if (news) {
     newsID = news.id;
+    // Set Page Title
+    document.title = `${news.title} - Medan 30 News`;
     // Get News Detail
     detailContentHeaderCategory.innerHTML = news.category.name;
     detailContentHeaderTitle.innerHTML = news.title;

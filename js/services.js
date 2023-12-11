@@ -20,7 +20,9 @@ const getHomepage = (category_id) => {
       const error = await err;
       showErrorToast({
         title: "Get Homepage Error",
-        description: `${error.errorCode}: ${error.error} `,
+        description: error.error
+          ? `${error.errorCode}: ${error.error}`
+          : undefined,
       });
     });
 };
@@ -45,7 +47,9 @@ const getNews = (category_id, limit) => {
       const error = await err;
       showErrorToast({
         title: "Get News Error",
-        description: `${error.errorCode}: ${error.error}`,
+        description: error.error
+          ? `${error.errorCode}: ${error.error}`
+          : undefined,
       });
     });
 };
@@ -64,7 +68,9 @@ const getNewsBySlug = async (slug) => {
       const error = await err;
       showErrorToast({
         title: "Get News Error",
-        description: `${error.errorCode}: ${error.error}`,
+        description: error.error
+          ? `${error.errorCode}: ${error.error}`
+          : undefined,
       });
     });
 };
@@ -85,7 +91,9 @@ const getSearch = (keyword) => {
       const error = await err;
       showErrorToast({
         title: "Get News Error",
-        description: `${error.errorCode}: ${error.error}`,
+        description: error.error
+          ? `${error.errorCode}: ${error.error}`
+          : undefined,
       });
     });
 };
@@ -104,7 +112,9 @@ const getCategories = () => {
       const error = await err;
       showErrorToast({
         title: "Get Categories Error",
-        description: `${error.errorCode}: ${error.error}`,
+        description: error.error
+          ? `${error.errorCode}: ${error.error}`
+          : undefined,
       });
     });
 };
@@ -129,7 +139,9 @@ const createComment = ({ news_id, name, comment }) => {
       const error = await err;
       showErrorToast({
         title: "Create Comment Error",
-        description: `${error.errorCode}: ${error.error}`,
+        description: error.error
+          ? `${error.errorCode}: ${error.error}`
+          : undefined,
       });
     });
 };

@@ -16,6 +16,25 @@ const moreContentContainer = document.getElementById("more-content-container");
 
 const allCategories = document.getElementById("all-categories");
 
+// Show Loading State
+const showLoadingState = () => {
+  highlightContainer.innerHTML =
+    '<div class="loading show" id="highlight-container-loading" />';
+  latestContentContainer.innerHTML = null;
+  latestContentContainer.classList.add("loading");
+  trendingContentContainer.classList.add("loading");
+  moreContentContainer.classList.add("loading");
+};
+
+// Stop Loading State
+const stopLoadingState = () => {
+  highlightContainerLoading.classList.remove("show");
+  latestContentContainer.classList.remove("loading");
+  trendingContentContainer.classList.remove("loading");
+  moreContentContainer.classList.remove("loading");
+};
+
+// Set Recommendation News
 const setRecommendationNews = ({
   title,
   slug,
@@ -38,6 +57,7 @@ const setRecommendationNews = ({
   </a>`;
 };
 
+// Set Latest News
 const setLatestNews = (latest) => {
   latestContentContainer.innerHTML = null;
   // Show Latest News
@@ -55,6 +75,7 @@ const setLatestNews = (latest) => {
   });
 };
 
+// Change Categories
 const changeCategories = async (id, name) => {
   showLoadingState();
 
@@ -84,25 +105,10 @@ const changeCategories = async (id, name) => {
   stopLoadingState();
 };
 
+// When "All Categories" Click
 allCategories.addEventListener("click", () =>
   changeCategories(0, "Semua Berita")
 );
-
-const showLoadingState = () => {
-  highlightContainer.innerHTML =
-    '<div class="loading show" id="highlight-container-loading" />';
-  latestContentContainer.innerHTML = null;
-  latestContentContainer.classList.add("loading");
-  trendingContentContainer.classList.add("loading");
-  moreContentContainer.classList.add("loading");
-};
-
-const stopLoadingState = () => {
-  highlightContainerLoading.classList.remove("show");
-  latestContentContainer.classList.remove("loading");
-  trendingContentContainer.classList.remove("loading");
-  moreContentContainer.classList.remove("loading");
-};
 
 // On Load
 window.addEventListener("load", async () => {
